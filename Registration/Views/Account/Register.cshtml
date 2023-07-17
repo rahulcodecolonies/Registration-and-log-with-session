@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model RegisterViewModel
+<h1>Sign Up</h1>
+<form asp-controller="Account" asp-action="Register" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="firstName"></label>
+        <input asp-for="firstName" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
+        <span asp-validation-for="firstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="lastName"></label>
+        <input asp-for="lastName" class="form-control" id="lastName" name="lastName" placeholder="Enter last Name">
+        <span asp-validation-for="lastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" id="Email" name="Email" placeholder="Enter email Id">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+   
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" id="Password" name="Password" placeholder="Enter Passward">
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="Reenter the password">
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    
+   
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <button type="button" class="btn btn-primary" onclick="window.location= '@Url.Action( "Login", "Account")'">LogIn</button>
+</form>
